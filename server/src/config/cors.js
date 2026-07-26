@@ -8,6 +8,8 @@ const allowedOrigins = [
 
 const corsOptions = {
   origin: (origin, callback) => {
+    console.log('Incoming origin:', origin);
+    console.log('Allowed origins:', allowedOrigins);
     // If no origin (e.g. mobile apps, Postman, curl, same-origin) or origin is in allowed list
     if (!origin || allowedOrigins.some(o => o && (o === origin || o.replace(/\/$/, '') === origin.replace(/\/$/, '')))) {
       callback(null, true);
