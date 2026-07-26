@@ -12,7 +12,7 @@ const clearAccessToken = () => {
 
 import axios from 'axios';
 
-const API_URL = import.meta.env.VITE_API_URL || 'https://server-production-e9a9a.up.railway.app';
+const API_URL = import.meta.env.VITE_API_URL || 'https://pro12-77gc.onrender.com';
 
 const api = axios.create({
   baseURL: API_URL,
