@@ -56,13 +56,18 @@ app.use(compression());
 app.use('/uploads', express.static(path.join(__dirname, '../uploads')));
 
 // Health Check API
-app.get('/api/health', (req, res) => {
+app.get("/api/health", (req, res) => {
   res.status(200).json({
-    status: 'healthy',
-    message: 'WanderVista Dhanish Travel Co. API is running smoothly',
+    status: "healthy",
+    message: "WanderVista API is running smoothly",
     timestamp: new Date().toISOString(),
   });
 });
+
+app.get("/", (req, res) => {
+  res.send("Server is running!");
+});
+
 
 // Mount Routes
 app.use('/api/auth', authRoutes);
